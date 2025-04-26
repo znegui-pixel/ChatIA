@@ -1,0 +1,8 @@
+numpy
+torch
+nltk
+pyspellchecker
+fuzzywuzzy
+python-Levenshtein
+flask
+flask-cors

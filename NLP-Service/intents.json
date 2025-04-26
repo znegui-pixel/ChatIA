@@ -1,0 +1,194 @@
+{
+  "intents": [
+    {
+      "tag": "salutation",
+      "patterns": ["Bonjour", "Salut", "Hello", "Coucou", "Hey"],
+      "responses": ["Bonjour ! Comment puis-je vous aider ?", "Salut ! Comment ça va ?", "Hello ! En quoi puis-je vous assister ?"]
+    },
+    {
+      "tag": "merci",
+      "patterns": ["Merci", "Merci beaucoup", "Je vous remercie"],
+      "responses": ["De rien !", "Avec plaisir !", "Je suis là pour ça !"]
+    },
+    {
+      "tag": "aide",
+      "patterns": ["Aide-moi", "Je besoin d'aide", "Peux-tu m'aider ?", "Comment ça marche"],
+      "responses": ["Bien sûr, que puis-je faire pour vous ?", "Je suis là pour aider. Quelle est votre question ?", "Dites-moi ce dont vous avez besoin."]
+    },
+    {
+      "tag": "au_revoir",
+      "patterns": ["Au revoir", "À plus tard", "Je m'en vais", "Bye"],
+      "responses": ["Au revoir ! À bientôt !", "À la prochaine !", "Bye bye ! Revenez quand vous voulez."]
+    },
+    {
+      "tag": "installation_activation",
+      "patterns": [
+        "Comment installer HeadsApp ?",
+        "Comment télécharger HeadsApp ?",
+        "Installation de HeadsApp échouée",
+        "Problème d'installation de l'application",
+        "Impossible d'activer mon compte après l'installation",
+        "HeadsApp ne s'installe pas sur mon téléphone"
+      ],
+      "responses": [
+        "Pour installer HeadsApp, rendez-vous sur l'App Store (iOS) ou le Play Store (Android) et téléchargez l'application.",
+        "Si vous rencontrez des difficultés d'installation, vérifiez que votre appareil dispose de suffisamment d'espace de stockage.",
+        "Si l'activation de votre compte ne fonctionne pas après l'installation, essayez de redémarrer l'application ou votre téléphone."
+      ]
+    },
+    {
+      "tag": "probleme_connexion_serveur",
+      "patterns": [
+        "Problème de connexion avec le serveur",
+        "Connexion au serveur échouée",
+        "Erreur lors de la connexion à HeadsApp",
+        "Serveur inaccessible, que faire ?",
+        "L'application ne charge pas, est-ce un problème de serveur ?"
+      ],
+      "responses": [
+        "Vérifiez votre connexion Internet et essayez de rafraîchir l'application.",
+        "Si vous rencontrez toujours un problème, essayez de vider le cache de l'application dans les paramètres.",
+        "Si le serveur est en maintenance, veuillez patienter quelques minutes et réessayer."
+      ]
+    },
+    {
+      "tag": "probleme_envoi_message",
+      "patterns": [
+        "Je n'arrive pas à envoyer de messages",
+        "Mes messages ne s'envoient pas",
+        "Les messages disparaissent après l'envoi",
+        "Problème de chat, messages bloqués",
+        "Pourquoi mon message reste en attente ?"
+      ],
+      "responses": [
+        "Essayez de redémarrer l'application et assurez-vous d'avoir une connexion Internet stable.",
+        "Si le problème persiste, videz le cache de l'application ou mettez-la à jour.",
+        "Si votre message reste en attente, vérifiez si HeadsApp a accès à Internet dans les paramètres de votre téléphone."
+      ]
+    },
+    {
+      "tag": "probleme_notification",
+      "patterns": [
+        "Je ne reçois plus de notifications",
+        "Les notifications ne fonctionnent pas",
+        "Je n'entends pas les notifications de messages",
+        "Pourquoi mes notifications sont désactivées ?",
+        "Problème avec les alertes de HeadsApp"
+      ],
+      "responses": [
+        "Assurez-vous que les notifications sont activées dans les paramètres de votre téléphone et de l'application.",
+        "Essayez de redémarrer votre appareil après avoir activé les notifications.",
+        "Si vous êtes sur Android, vérifiez que HeadsApp n'est pas en mode économie d'énergie, ce qui pourrait bloquer les notifications."
+      ]
+    },
+    {
+      "tag": "probleme_mot_de_passe",
+      "patterns": [
+        "Je ne peux pas me connecter à cause du mot de passe",
+        "Mot de passe incorrect, que faire ?",
+        "Problème avec l'identifiant ou le mot de passe",
+        "J'ai oublié mon mot de passe HeadsApp",
+        "Je veux réinitialiser mon mot de passe"
+      ],
+      "responses": [
+        "Si vous avez oublié votre mot de passe, utilisez l'option 'Mot de passe oublié' pour le réinitialiser.",
+        "Vérifiez qu'il n'y a pas d'espace avant ou après votre adresse e-mail lorsque vous essayez de vous connecter.",
+        "Si votre mot de passe est rejeté malgré plusieurs essais, contactez notre support pour obtenir de l'aide."
+      ]
+    },
+    {
+      "tag": "probleme_groupe",
+      "patterns": [
+        "Je ne peux pas accéder aux groupes",
+        "Les discussions de groupe ne s'affichent pas",
+        "Problème de chargement des groupes sur HeadsApp",
+        "Pourquoi je ne vois pas les messages des groupes ?",
+        "Mes groupes sont bloqués"
+      ],
+      "responses": [
+        "Essayez de rafraîchir l'application ou de vous déconnecter puis reconnecter.",
+        "Assurez-vous que votre connexion Internet est stable et que vous utilisez la dernière version de HeadsApp.",
+        "Si le problème persiste, contactez l'administrateur du groupe ou notre support."
+      ]
+    },
+    {
+      "tag": "probleme_photo",
+      "patterns": [
+        "Je ne peux pas envoyer de photo",
+        "Problème d'envoi de photos sur HeadsApp",
+        "Mes photos ne s'envoient pas, pourquoi ?",
+        "Impossible de partager une image avec mes contacts"
+      ],
+      "responses": [
+        "Assurez-vous que l'application HeadsApp a les permissions nécessaires pour accéder à vos photos.",
+        "Essayez de redémarrer l'application et de vérifier votre connexion Internet.",
+        "Si le problème persiste, mettez à jour HeadsApp ou réinstallez-la."
+      ]
+    },
+    {
+      "tag": "probleme_creation_compte",
+      "patterns": [
+        "Je ne peux pas créer mon compte HeadsApp",
+        "Problème lors de l'inscription",
+        "Je n'arrive pas à finaliser mon inscription",
+        "Le bouton 'suivant' ne fonctionne pas"
+      ],
+      "responses": [
+        "Vérifiez votre connexion Internet et assurez-vous de remplir tous les champs requis.",
+        "Si le bouton 'suivant' ne fonctionne pas, redémarrez l'application et réessayez.",
+        "Si le problème persiste, contactez notre support technique."
+      ]
+    },
+    {
+      "tag": "autre_probleme",
+      "patterns": [
+        "J'ai un autre problème avec HeadsApp",
+        "J'ai besoin d'aide pour un problème spécifique",
+        "Une fonctionnalité ne marche pas correctement",
+        "Comment contacter le support de HeadsApp ?"
+      ],
+      "responses": [
+        "Merci de préciser votre problème pour que nous puissions mieux vous aider.",
+        "Si vous avez un problème technique, contactez notre support via l'application ou notre site web.",
+        "Nous sommes là pour vous aider, décrivez-nous votre problème et nous ferons de notre mieux pour le résoudre."
+      ]
+    },
+
+    {
+        "tag": "message_groupe",
+        "patterns": [
+            "Je ne peux pas envoyer de message",
+            "Impossible d'envoyer un message",
+            "Je n'arrive pas à écrire dans le groupe"
+        ],
+        "responses": [
+            "Mentionnez @nom_personne ou @tous pour envoyer un message."
+        ]
+    },
+    {
+        "tag": "pas_de_discussion",
+        "patterns": [
+            "Je ne vois aucune discussion",
+            "Pas de discussions disponibles",
+            "Les discussions ont disparu"
+        ],
+        "responses": [
+            "Veuillez choisir l'établissement de nouveau."
+        ]
+    },
+    {
+        "tag": "probleme_router",
+        "patterns": [
+            "Mon téléphone ne se connecte pas au routeur",
+            "Je rencontre un problème avec le routeur",
+            "Le réseau ne fonctionne pas sur mon téléphone"
+        ],
+        "responses": [
+            "Désactivez l'option de développement dans les paramètres.",
+            "Remplissez le formulaire pour signaler le problème."
+        ]
+    } 
+    
+    
+  ]
+}

@@ -1,0 +1,1 @@
+export const NLP_SERVICE_URL = process.env.NLP_SERVICE_URL || "http://localhost:5001";
