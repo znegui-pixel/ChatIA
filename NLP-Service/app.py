@@ -1,19 +1,15 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from chat import load_model, get_response
-import torch
+from chat import get_response
 
 app = Flask(__name__)
 CORS(app)
-
-# Charger le modèle au démarrage
-model, all_words, tags = load_model()
 
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.get_json()
     message = data['message']
-    response = get_response(message, model, all_words, tags)
+    response = get_response(message)
     return jsonify({'response': response})
 
 if __name__ == '__main__':

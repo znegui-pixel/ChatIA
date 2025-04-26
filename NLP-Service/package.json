@@ -4,6 +4,7 @@
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^7.0.2",
     "@mui/material": "^7.0.2",
-    "fuzz": "^0.0.3"
+    "fuzz": "^0.0.3",
+    "scikit-learn": "^0.1.0"
   }
 }
