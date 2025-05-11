@@ -2,7 +2,6 @@ import torch
 import random
 from nlp_utils import tokenize, bag_of_words
 from train import NeuralNet
-
 import json
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -71,4 +70,4 @@ def get_response(msg):
             if tag == intent["tag"]:
                 return random.choice(intent["responses"])
 
-    return "Je ne comprends pas bien... Pouvez-vous reformuler 11?"
+    return "Je ne comprends pas bien... Pouvez-vous reformuler ?"
