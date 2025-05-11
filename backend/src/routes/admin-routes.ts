@@ -8,7 +8,7 @@ router.use(requireAdmin);
 // Reporting
 router.get("/analytics/questions-per-tag", Admin.questionsPerTag);
 router.get("/analytics/daily-volume", Admin.dailyVolume);
-
+router.get("/analytics/global-stats", Admin.getGlobalStats);
 // NLP
 router.get("/intents", Admin.getIntents);
 router.post("/intents", Admin.addIntent);

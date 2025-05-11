@@ -1,6 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
 import QuestionLog from "../models/QuestionLog.js";
+import User from "../models/User.js";
 export const questionsPerTag = async (_, res) => {
     const data = await QuestionLog.aggregate([
         { $group: { _id: "$tag", count: { $sum: 1 } } },
@@ -34,3 +35,32 @@ export const addIntent = async (req, res) => {
     await fs.writeFile(intentsPath, JSON.stringify(json, null, 2), "utf8");
     res.json({ message: "Intent ajoutée avec succès" });
 };
+export const getGlobalStats = async (_, res) => {
+    const [totalUsers, totalQuestions, tagsData] = await Promise.all([
+        User.countDocuments(),
+        QuestionLog.countDocuments(),
+        QuestionLog.aggregate([
+            { $group: { _id: "$tag", count: { $sum: 1 } } }
+        ])
+    ]);
+    res.json({
+        totalUsers,
+        totalQuestions,
+        totalIntents: tagsData.length, // Nombre de tags différents
+        usersPerRole: {
+            admin: await User.countDocuments({ email: "admin@gmail.com" }),
+            user: totalUsers - await User.countDocuments({ email: "admin@gmail.com" })
+        }
+    });
+};
+
+export const getAllUsers = async (req, res) => {
+    try {
+      console.log("JWT Data:", res.locals.jwtData);  // Vérifiez que les données du token sont présentes
+      const users = await User.find({}, "-password").sort({ createdAt: -1 });  // Exclut le champ 'password'
+      res.json({ users });
+    } catch (err) {
+      res.status(500).json({ message: "Erreur lors de la récupération des utilisateurs." });
+    }
+  };
+  
