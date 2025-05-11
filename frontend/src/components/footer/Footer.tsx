@@ -13,9 +13,9 @@ const Footer = () => {
         }}
       >
         <p style={{ fontSize: "30px", textAlign: "center", padding: "20px" }}>
-          Built With love by
+          Powred By Headsapp  
           
-          💘
+          
         </p>
       </div>
     </footer>

@@ -1,13 +1,14 @@
 import React from "react";
 import TextField, { TextFieldProps } from "@mui/material/TextField";
 
-interface CustomizedInputProps extends TextFieldProps {
+type CustomizedInputProps = TextFieldProps & {
   name: string;
   label: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   type?: string;
-}
+};
+
 
 const CustomizedInput: React.FC<CustomizedInputProps> = ({
   name,

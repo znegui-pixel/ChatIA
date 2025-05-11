@@ -110,11 +110,11 @@ const [subResponses, setSubResponses] = useState<{ [key: string]: string }>({});
 
           </Avatar>
           <Typography sx={{ mx: "auto", fontFamily: "work sans" }}>
-            You are talking to a ChatBOT
+          Vous discutez avec un chatbot
           </Typography>
           <Typography sx={{ mx: "auto", fontFamily: "work sans", my: 4, p: 3 }}>
-            You can ask some questions related to Knowledge, Business, Advices,
-            Education, etc. But avoid sharing personal information
+          Vous pouvez poser des questions liées à la connaissance, problèmes ou aux difficultés rencontrées sur Headsapp.
+          Veuillez éviter de partager des informations personnelles.
           </Typography>
           <Button
           onClick={handleDeleteChats}
@@ -149,7 +149,7 @@ const [subResponses, setSubResponses] = useState<{ [key: string]: string }>({});
             mx: "auto",
             fontWeight: "600",
           }}>
-            Model - GPT 3.5 Turbo
+            Headsapp – Assistant personnel
           </Typography>
           <Box sx={{
             width: "100%",

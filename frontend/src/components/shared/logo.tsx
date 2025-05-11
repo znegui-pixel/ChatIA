@@ -14,11 +14,10 @@ const Logo = () => {
     >
       <Link to="/">
         <img
-          src="openai.png"
+          src="ChatBot_Logo.png"
           alt="OpenAI logo"
-          width="30px"
-          height="30px"
-          className="image-inverted"
+          width="55px"
+          height="55px"
         />
       </Link>
       <Typography

@@ -1,23 +1,24 @@
 import axios from "axios";
+
+axios.defaults.baseURL = "http://localhost:5000/api/v1";
+axios.defaults.withCredentials = true;
+axios.defaults.headers.post["Content-Type"] = "application/json";
+
+
 export const loginUser = async (email: string, password: string) => {
   const res = await axios.post("/user/login", { email, password });
   if (res.status !== 200) {
     throw new Error("Unable to login");
   }
-  const data = await res.data;
-  return data;
+  return res.data;
 };
-export const signupUser = async (
-  name: string,
-  email: string,
-  password: string
-) => {
+
+export const signupUser = async (name: string, email: string, password: string) => {
   const res = await axios.post("/user/signup", { name, email, password });
   if (res.status !== 201) {
-    throw new Error("Unable to Signup");
+    throw new Error("Unable to signup");
   }
-  const data = await res.data;
-  return data;
+  return res.data;
 };
 
 export const chekAuthStatus = async () => {
@@ -25,43 +26,45 @@ export const chekAuthStatus = async () => {
   if (res.status !== 200) {
     throw new Error("Unable to authenticate");
   }
-  const data = await res.data;
-  return data;
+  return res.data;
 };
+
 export const sendChatRequest = async (message: string) => {
   const res = await axios.post("/chat/local-nlp", { message });
-  const data = await res.data;
-  return data;
+  return res.data;
 };
+
 export const getUserChats = async () => {
   const res = await axios.get("/chat/all-chats");
   if (res.status !== 200) {
-    throw new Error("Unable to send chat");
+    throw new Error("Unable to get chats");
   }
-  const data = await res.data;
-  return data;
+  return res.data;
 };
+
 export const deleteUserChats = async () => {
   const res = await axios.delete("/chat/delete");
   if (res.status !== 200) {
     throw new Error("Unable to delete chats");
   }
-  const data = await res.data;
-  return data;
+  return res.data;
 };
 
-export const logoutUser = async () => {
-  const res = await axios.get("/user/logout");
+export const logoutUser = async (token: string) => {
+  const res = await axios.get("/user/logout", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    withCredentials: true,
+  });
+
   if (res.status !== 200) {
-    throw new Error("Unable to delete chats");
+    throw new Error("Unable to logout");
   }
-  const data = await res.data;
-  return data;
+  return res.data;
 };
+
 export const getNLPResponse = async (message: string) => {
   const res = await axios.post("/chat/nlp-predict", { message });
   return res.data;
 };
-
-
-
